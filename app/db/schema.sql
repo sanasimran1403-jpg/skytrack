@@ -41,3 +41,5 @@ CREATE TABLE IF NOT EXISTS alerts (
     ts      TIMESTAMPTZ,
     details TEXT
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS ux_alerts_dedupe ON alerts (icao24, type, ts);
